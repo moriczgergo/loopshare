@@ -1,0 +1,40 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary actionbutton" data-toggle="modal" data-target="#addPostModal" id="addPost">
+  <i class="fas fa-plus"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="addPostModalTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addPostModalTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Discard</button>
+        <button type="button" class="btn btn-primary">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul style="list-style-type: none; color: white; padding-left: 0; margin-left: 10px; margin-top: 10px;">
+    <% @posts.each do |p| %>
+        <li style="width: auto;">
+            <img src="https://via.placeholder.com/256" class="rounded" style="width: 64px; float:left;">
+            <p class="fl-right"> <!-- I have no idea why this works if both elements are paragraphs. Let's just keep it this way... -->
+                <p style="margin-left: 74px;"> <!-- again, no idea why it needs to be 74 and not 10. -->
+                    <a href="/@<%= p.author %>" style="color: white; text-decoration: none;"><b><%= p.author %></b></a><br/>
+                    <%= p.content %>
+                </p>
+            </p>
+            <div class="clear"></div>
+        </li>
+    <% end %>
+</ul>
