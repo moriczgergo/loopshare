@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Authentication using Devise
 gem 'devise'
+# Attachment managament using Shrine
+gem "shrine", "~> 2.0"
+# Attachment processing using image_processing
+gem "image_processing", "~> 1.0"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

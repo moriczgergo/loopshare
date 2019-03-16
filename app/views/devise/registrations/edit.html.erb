@@ -4,6 +4,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :profile_pic %><br />
+    <img src="<%= ( if resource.profile_pic.nil? then "https://dummyimage.com/256" else resource.profile_pic[:small].url end) %>"><br />
+    <%= f.hidden_field :profile_pic, value: resource.cached_profile_pic_data %><br />
+    <%= f.file_field :profile_pic %>
+  </div>
+
+  <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username, disabled: true, autofocus: false %>
   </div>
